@@ -32,11 +32,15 @@
         <script>
             function judge() {
                 const correct = "𦚰耀󠄁鋭";
+                const osii = ["脇耀鋭", "よー"];
                 const userAnswer = document.getElementById('answer').value.trim().toLowerCase();
                 const result = document.getElementById('result');
                 if (userAnswer === correct) {
                     result.textContent = "正解！";
                     result.style.color = "green";
+                } else if (osii.includes(userAnswer)) {
+                    result.textContent = "おしい！";
+                    result.style.color = "orange";
                 } else {
                     result.textContent = "不正解...";
                     result.style.color = "red";
