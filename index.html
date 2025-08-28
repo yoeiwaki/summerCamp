@@ -17,17 +17,23 @@
     <div class="container">
         <h2>夏合宿しおり正誤判定フォーム</h2>
         <form id="judgeForm" onsubmit="return false;">
-            <label for="answer">上側の答え</label>
+            <label for="answer">1問目</label>
             <input type="text" id="answer" autocomplete="off" />
             <button onclick="judge()">判定</button>
         </form>
         <div class="result" id="result"></div>
         <form id="judgeForm2" onsubmit="return false;">
-            <label for="answer2">下側の答え</label>
+            <label for="answer2">2問目</label>
             <input type="text" id="answer2" autocomplete="off" />
             <button onclick="judge2()">判定</button>
         </form>
         <div class="result" id="result2"></div>
+        <form id="judgeForm3" onsubmit="return false;" style="margin-top:30px;">
+            <label for="answer3">3問目</label>
+            <input type="text" id="answer3" autocomplete="off" />
+            <button onclick="judge3()">判定</button>
+        </form>
+        <div class="result" id="result3"></div>
     </div>
         <script>
             function judge() {
@@ -61,6 +67,18 @@
                 } else {
                     result2.textContent = "不正解...";
                     result2.style.color = "red";
+                }
+            }
+            function judge3() {
+                const correct3 = ["山中湖", "やまなかこ"];
+                const userAnswer3 = document.getElementById('answer3').value.trim().toLowerCase();
+                const result3 = document.getElementById('result3');
+                if (correct3.includes(userAnswer3)) {
+                    result3.textContent = "正解！";
+                    result3.style.color = "green";
+                } else {
+                    result3.textContent = "不正解...";
+                    result3.style.color = "red";
                 }
             }
         </script>
