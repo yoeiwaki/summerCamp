@@ -2,6 +2,7 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
+    <meta name="robots" content="noindex, nofollow">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>正誤判定フォーム</title>
     <style>
@@ -37,13 +38,13 @@
     </div>
         <script>
             function judge() {
-                const correct = "𦚰耀󠄁鋭";
+                const correct = ["𦚰耀󠄁鋭", "𦚰 耀󠄁鋭"];
                 const hijoniosii = ["脇耀鋭", "𦚰耀鋭"];
                 const osii = ["よー"];
                 const madamada = "me";
                 const userAnswer = document.getElementById('answer').value.trim().toLowerCase();
                 const result = document.getElementById('result');
-                if (userAnswer === correct) {
+                if (correct.includes(userAnswer)) {
                     result.textContent = "正解！";
                     result.style.color = "green";
                 } else if (hijoniosii.includes(userAnswer)) {
