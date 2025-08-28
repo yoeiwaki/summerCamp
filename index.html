@@ -31,7 +31,7 @@
     </div>
         <script>
             function judge() {
-                const correct = "summer vacation";
+                const correct = "𦚰耀󠄁鋭";
                 const userAnswer = document.getElementById('answer').value.trim().toLowerCase();
                 const result = document.getElementById('result');
                 if (userAnswer === correct) {
@@ -43,10 +43,11 @@
                 }
             }
             function judge2() {
-                const correct2 = "winter vacation";
+                const correct2 = "白鯨";
+                const correct2o = "HAKUGEI";
                 const userAnswer2 = document.getElementById('answer2').value.trim().toLowerCase();
                 const result2 = document.getElementById('result2');
-                if (userAnswer2 === correct2) {
+                if (userAnswer2 === correct2 || userAnswer2 === correct2o) {
                     result2.textContent = "正解！";
                     result2.style.color = "green";
                 } else {
