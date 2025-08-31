@@ -17,6 +17,32 @@
 <body>
     <div class="container">
         <h2>夏合宿しおり<br>正誤判定フォーム</h2>
+        <h3>sanhon</h3>
+        <form id="judgeForm_a" onsubmit="return false;">
+            <label for="answer_a">Q1</label>
+            <input type="text" id="answer_a" autocomplete="off" />
+            <button onclick="judge_a()">判定</button>
+        </form>
+        <div class="result" id="result_a"></div>
+        <form id="judgeForm_b" onsubmit="return false;">
+            <label for="answer_b">Q2</label>
+            <input type="text" id="answer_b" autocomplete="off" />
+            <button onclick="judge_b()">判定</button>
+        </form>
+        <div class="result" id="result_b"></div>
+        <form id="judgeForm_c" onsubmit="return false;">
+            <label for="answer_c">Q3</label>
+            <input type="text" id="answer_c" autocomplete="off" />
+            <button onclick="judge_c()">判定</button>
+        </form>
+        <div class="result" id="result_c"></div>
+        <form id="judgeForm_d" onsubmit="return false;">
+            <label for="answer_d">まとめ</label>
+            <input type="text" id="answer_d" autocomplete="off" />
+            <button onclick="judge_d()">判定</button>
+        </form>
+        <div class="result" id="result_d"></div>
+        <h3>yoo</h3>
         <form id="judgeForm" onsubmit="return false;">
             <label for="answer">1問目</label>
             <input type="text" id="answer" autocomplete="off" />
@@ -37,6 +63,54 @@
         <div class="result" id="result3"></div>-->
     </div>
         <script>
+            function judge_a() {
+                const correct = ["待ち合わせ", "まちあわせ"];
+                const userAnswer = document.getElementById('answer_a').value.trim().toLowerCase();
+                const result = document.getElementById('result_a');
+                if (correct.includes(userAnswer)) {
+                    result.textContent = "正解！";
+                    result.style.color = "green";
+                } else {
+                    result.textContent = "不正解...";
+                    result.style.color = "red";
+                }
+            }
+            function judge_b() {
+                const correct = ["さんよ", "参与", "三余"];
+                const userAnswer = document.getElementById('answer_b').value.trim().toLowerCase();
+                const result = document.getElementById('result_b');
+                if (correct.includes(userAnswer)) {
+                    result.textContent = "正解！";
+                    result.style.color = "green";
+                } else {
+                    result.textContent = "不正解...";
+                    result.style.color = "red";
+                }
+            }
+            function judge_c() {
+                const correct = ["裏切り", "うらぎり"];
+                const userAnswer = document.getElementById('answer_c').value.trim().toLowerCase();
+                const result = document.getElementById('result_c');
+                if (correct.includes(userAnswer)) {
+                    result.textContent = "正解！";
+                    result.style.color = "green";
+                } else {
+                    result.textContent = "不正解...";
+                    result.style.color = "red";
+                }
+            }
+            function judge_d() {
+                const correct = ["漫画", "まんが", "マンガ"];
+                const userAnswer = document.getElementById('answer_d').value.trim().toLowerCase();
+                const result = document.getElementById('result_d');
+                if (correct.includes(userAnswer)) {
+                    result.textContent = "正解！";
+                    result.style.color = "green";
+                } else {
+                    result.textContent = "不正解...";
+                    result.style.color = "red";
+                }
+            }
             function judge() {
                 const correct = ["𦚰耀󠄁鋭", "𦚰 耀󠄁鋭"];
                 const hijoniosii = ["脇耀鋭", "𦚰耀鋭"];
